@@ -11,13 +11,13 @@ jobs:
       - name: myfirst step
         uses: actions/checkout@v2
       - name: mysecond step
-        run:  echo, Helloworld!
+        run:  "echo Helloworld!"
   job2:
     name: My Second job
     runs-on: windows-latest
     steps:
       - name: myfirst step
-        uses: action/checkout@v2
+        uses: actions/checkout@v2
       - name: mysecond step
-        run: Write-Host,Hello world!!
+        run: "Write-Host Hello world!!"
 
