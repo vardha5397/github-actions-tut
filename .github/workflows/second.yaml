@@ -1,0 +1,23 @@
+name: second
+run-name: second-yaml-file
+
+on: [push]
+
+jobs:
+  job1:
+    name: My first job
+    runs-on: ubuntu-latest
+    steps:
+      - name: myfirst step
+        uses: actions/checkout@v2
+      - name: mysecond step
+        run:  echo, Helloworld!
+  job2:
+    name: My Second job
+    runs-on: windows-latest
+    steps:
+      - name: myfirst step
+        uses: action/checkout@v2
+      - name: mysecond step
+        run: Write-Host,Hello world!!
+
