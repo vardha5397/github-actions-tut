@@ -1,0 +1,34 @@
+name: complex
+run-name: complex-task
+
+on: 
+    push:
+        branches:
+            - main
+
+jobs:
+     ubuntu:
+        runs-on: ubuntu-latest
+        steps:
+            - name: The task is to print date
+              run: "date"
+     windows:
+        runs-on: windows-latest
+        steps:
+            - name: The Task is to print Date
+              run: "date"
+     macos:
+        runs-on: macos-latest
+        steps:
+            - name: The Task is to print Date
+              run: "date"
+     depends:
+        needs: ["ubuntu","windows","macos"]
+        runs-on: ubuntu-latest
+        steps:
+            - name: combination of  above tasks
+              run: "date"
+
+    
+
+
