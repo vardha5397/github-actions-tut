@@ -1,0 +1,38 @@
+name: Challenge
+run-name: challenge-task
+
+on:
+  push
+
+jobs:
+  job1:
+    name: windows job
+    runs-on: ubuntu-latest
+    steps:
+      - name: ubuntu job
+        uses: actions/checkout@v2
+      - name: Date in ubuntu machine
+        run:  date
+  job2:
+    name: windows job
+    runs-on: windows-latest
+    steps:
+      - name: windows job
+        uses: actions/checkout@v2
+      - name: Date in windows machine
+        run: date
+  job3:
+    name: MAC os job
+    runs-on: macos-latest
+    steps:
+      - name: mac os job
+        uses: actions/checkout@v2
+      - name: date in mac machine
+        run:  date
+  job4:
+    name: dependency job
+    needs: [job1,job2,job3]
+    runs-on: ubuntu-latest
+    steps:
+      - run: date 
+
